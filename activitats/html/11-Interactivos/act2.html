@@ -5,33 +5,27 @@
   <title>Autocompletado de Marcas de Smartphone</title>
 </head>
 <body>
-  <!--????????-->
-  <label for="marca">Marca:</label>
-  <input type="text" id="marca" name="marca" autocomplete="off" onkeyup="autocompletarMarcas()">
-  
-  <datalist id="marcas-lista">
-    <option value="Apple">
-    <option value="Samsung">
-    <option value="Huawei">
-    <option value="Xiaomi">
-  </datalist>
 
-  <script>
-    function autocompletarMarcas() {
-      var input, filtro, datalist, opciones, i;
-      input = document.getElementById("marca");
-      filtro = input.value.toUpperCase();
-      datalist = document.getElementById("marcas-lista");
-      opciones = datalist.getElementsByTagName("option");
-      
-      for (i = 0; i < opciones.length; i++) {
-        if (opciones[i].value.toUpperCase().indexOf(filtro) > -1) {
-          opciones[i].style.display = "";
-        } else {
-          opciones[i].style.display = "none";
-        }
-      }
-    }
-  </script>
+  <h1>Buscador de Smartphones</h1>
+
+  <form>
+    <label for="brand">Marca:</label>
+    <input type="text" id="brand" list="brandList" placeholder="Escribe la marca">
+
+    <datalist id="brandList">
+      <option value="Apple"><details>500€</details>
+      <option value="Samsung"><details>400€</details>
+      <option value="Google"><details>300€</details>
+      <option value="Huawei"><details>545€</details>
+      <option value="Xiaomi"><details>50€</details>
+      <option value="OnePlus"><details>400€</details>
+    </datalist>
+
+
+
+    <input type="submit" value="Buscar">
+  </form>
+
 </body>
+</html>
 </html>
